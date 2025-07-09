@@ -1,0 +1,39 @@
+.sidebar_logo {
+  @apply w-[120px];
+
+  &>img {
+    @apply w-full;
+  }
+}
+
+.sidebar_container {
+  @apply flex flex-col gap-40;
+
+  .sidebar_line {
+    @apply relative pl-[30px] transition-all duration-500 ease-in-out before:absolute before:w-[20px] before:h-[6px] before:bg-black before:dark:bg-[#E0E0E0] before:rounded-full before:left-0 before:top-1/2 before:-translate-y-1/2 before:transition-all before:duration-500 before:ease-in-out;
+  
+    &>span {
+      @apply text-[20px] text-muted_gray leading-10 cursor-pointer;
+    }
+
+    &.active {
+      @apply pl-[80px] before:bg-black before:dark:bg-pure_white before:w-[60px];
+    
+      &>span {
+        @apply text-[28px] text-black dark:text-pure_white;
+      }
+    }
+  }
+
+  .sidebar_icons {
+    @apply flex gap-5;
+    
+    &>a {
+      @apply w-7;
+      
+      &>img {
+        @apply w-full hover:scale-125 transition;
+      }
+    }
+  }
+}

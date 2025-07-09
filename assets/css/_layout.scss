@@ -1,0 +1,19 @@
+	.layout_container {
+		@apply bg-base dark:bg-black;
+
+		.layout_wrapper {
+			@apply w-4/5 flex m-auto;
+			
+			.layout_sidebar {
+				@apply fixed flex flex-col gap-20 top-1/2 -translate-y-1/2 z-10;
+			}
+		
+			.layout_content {
+				@apply w-2/3 ml-auto;
+			}
+		}
+	
+		.layout_footer {
+			@apply text-center pb-2;
+		}
+	}

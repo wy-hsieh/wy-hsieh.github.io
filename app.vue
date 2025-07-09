@@ -1,5 +1,5 @@
 <template>
-  <div>
-    yen
-  </div>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>

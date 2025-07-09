@@ -1,0 +1,19 @@
+.experience_container {
+  @apply relative min-h-dvh flex flex-col justify-center gap-6 z-10;
+
+  .experience_item {
+    @apply flex flex-col gap-6;
+  
+    .experience_detail {
+      @apply flex flex-col gap-4;
+    
+      .experience_compony_website {
+        @apply flex items-end gap-2;
+      }
+      
+      .experience_title_period {
+        @apply flex gap-2 font-bold;
+      }
+    }
+  }
+}

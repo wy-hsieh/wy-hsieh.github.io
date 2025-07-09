@@ -1,0 +1,29 @@
+.skills_container {
+  @apply relative min-h-dvh flex flex-col justify-center z-10;
+
+  .skills_wrapper {
+    @apply w-full h-full grid grid-cols-4 gap-4;
+
+    .skills_item {
+      @apply relative w-[100px] h-[100px] aspect-square;
+    }
+    
+    .skills_svg {
+      @apply w-full h-full -rotate-90;
+
+      .skills_bottom_circle {
+        @apply fill-none stroke-[6px] stroke-muted_gray;
+      }
+      
+      .skills_top_circle {
+        stroke-dasharray: 283;
+        stroke-dashoffset: 283;
+        @apply fill-none stroke-[6px];
+      }
+    }
+
+    .skills_label {
+      @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center;
+    }
+  }
+}
