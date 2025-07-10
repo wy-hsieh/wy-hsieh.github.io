@@ -25,7 +25,50 @@
 
 <script setup lang="ts">
 
-	import { useSkillsStore } from '~/store/skills';
+  const { $gsap: gsap, $ScrollTrigger: ScrollTrigger } = useNuxtApp();
 	const skillsStore = useSkillsStore();
+  const sidebarStore = useSidebarStore();
+  const projectsStore = useProjectsStore();
+
+
+	onMounted(() => {
+    ScrollTrigger.create({
+			trigger: '#skills',
+			start: 'top center',
+			end: 'bottom center',
+			onEnter: () => {
+				sidebarStore.setActive('skills');
+				projectsStore.setYear('');
+			},
+			onEnterBack: () => {
+				sidebarStore.setActive('skills');
+				projectsStore.setYear('');
+			},
+		});
+
+			// skills progress
+		skillsStore.data.forEach((item) => {
+      ScrollTrigger.create({
+        trigger: '#skills',
+        start: 'top center',
+        end: 'bottom center',
+        onEnter: () => animateProgress(item.className, item.percentage),
+        once: true,
+      });
+    });
+	});
+
+	const animateProgress = (className: string, percentage: number) => {
+    const radius = 45;
+    const circumference = 2 * Math.PI * radius;
+    const progress = percentage / 100;
+    const offset = circumference * (1 - progress);
+    
+    gsap.to(`.${className}`, {
+      strokeDashoffset: offset,
+      duration: 3,
+      ease: 'power2.out',
+    });
+  };
 
 </script>

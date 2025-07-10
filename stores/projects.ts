@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia';
 
 export const useProjectsStore = defineStore('projectsStore', () => {
+  
   const data = ref({
     projects: {
       2020: [
@@ -144,6 +145,6 @@ export const useProjectsStore = defineStore('projectsStore', () => {
 
   return {
     data,
-    setYear
+    setYear,
   };
 });

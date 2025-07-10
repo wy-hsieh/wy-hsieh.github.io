@@ -49,18 +49,145 @@
 
 <script setup lang="ts">
 
-	import { useProjectsStore } from '~/store/projects';
+	const { $gsap: gsap, $ScrollTrigger: ScrollTrigger } = useNuxtApp();
 	const projectsStore = useProjectsStore();
+	const sidebarStore = useSidebarStore();
 
 
 	const currentYear = computed(() => projectsStore.data.currentYear);
 
 	const reversedYears = computed(() => Object.keys(projectsStore.data.projects).sort((a, b) => b - a));
 
-
 	const reversedProjects = Object.fromEntries(Object.entries(useCloneDeep(projectsStore.data.projects)).map(item => {
 		item[1].reverse();
 		return item;
 	}));
+
+	onMounted(() => {
+		// sidebar active
+		ScrollTrigger.create({
+			trigger: '#projects',
+			start: 'top center',
+			end: 'bottom center',
+			onEnter: () => sidebarStore.setActive('projects'),
+			onEnterBack: () => sidebarStore.setActive('projects'),
+		});
+
+		// background animation
+		ScrollTrigger.create({
+			trigger: '#projects_2020',
+			start: 'top center',
+			end: 'bottom center',
+			onEnter: () => projectsStore.setYear('2020'),
+			onEnterBack: () => projectsStore.setYear('2020'),
+		});
+
+		ScrollTrigger.create({
+			trigger: '#projects_2021',
+			start: 'top center',
+			end: 'bottom center',
+			onEnter: () => projectsStore.setYear('2021'),
+			onEnterBack: () => projectsStore.setYear('2021'),
+		});
+
+		ScrollTrigger.create({
+			trigger: '#projects_2022',
+			start: 'top center',
+			end: 'bottom center',
+			onEnter: () => projectsStore.setYear('2022'),
+			onEnterBack: () => projectsStore.setYear('2022'),
+		});
+
+		ScrollTrigger.create({
+			trigger: '#projects_2023',
+			start: 'top center',
+			end: 'bottom center',
+			onEnter: () => projectsStore.setYear('2023'),
+			onEnterBack: () => projectsStore.setYear('2023'),
+		});
+
+		ScrollTrigger.create({
+			trigger: '#projects_2024',
+			start: 'top center',
+			end: 'bottom center',
+			onEnter: () => projectsStore.setYear('2024'),
+			onEnterBack: () => projectsStore.setYear('2024'),
+		});
+
+		ScrollTrigger.create({
+			trigger: '#projects_2025',
+			start: 'top center',
+			end: 'bottom center',
+			onEnter: () => projectsStore.setYear('2025'),
+			onEnterBack: () => projectsStore.setYear('2025'),
+		});
+
+		// snap
+		ScrollTrigger.create({
+			trigger: '#projects_2020',
+			start: 'top top',
+			end: 'bottom center',
+			snap: {
+				snapTo: 0,
+				duration: 0.5,
+				ease: 'power1.inOut',
+			},
+		});
+
+		ScrollTrigger.create({
+			trigger: '#projects_2021',
+			start: 'top top',
+			end: '60% center',
+			snap: {
+				snapTo: 0,
+				duration: 0.5,
+				ease: 'power1.inOut',
+			},
+		});
+
+		ScrollTrigger.create({
+			trigger: '#projects_2022',
+			start: 'top top',
+			end: '70% center',
+			snap: {
+				snapTo: 0,
+				duration: 0.5,
+				ease: 'power1.inOut',
+			},
+		});
+
+		ScrollTrigger.create({
+			trigger: '#projects_2023',
+			start: 'top top',
+			end: '60% center',
+			snap: {
+				snapTo: 0,
+				duration: 0.5,
+				ease: 'power1.inOut',
+			},
+		});
+
+		ScrollTrigger.create({
+			trigger: '#projects_2024',
+			start: 'top top',
+			end: 'bottom center',
+			snap: {
+				snapTo: 0,
+				duration: 0.5,
+				ease: 'power1.inOut',
+			},
+		});
+
+		ScrollTrigger.create({
+			trigger: '#projects_2025',
+			start: 'top top',
+			end: 'bottom center',
+			snap: {
+				snapTo: 0,
+				duration: 0.5,
+				ease: 'power1.inOut',
+			},
+		});
+	});
 
 </script>

@@ -11,9 +11,9 @@
 					<span>(<a :href="experience.website" target="_blank">{{ experience.website }}</a>)</span>
 				</div>
 				<p class="experience_title_period">
-					<span>{{ experience.title }}</span>
+					<span class="experience_title">{{ experience.title }}</span>
 					|
-					<span>{{ experience.period }}</span>
+					<span class="experience_period">{{ experience.period }}</span>
 				</p>
 				<p>{{ experience.description }}</p>
 				<p>- 工作內容: {{ experience.responsibility }}</p>
@@ -27,7 +27,39 @@
 
 <script setup lang="ts">
 
-	import { useExperienceStore } from '~/store/experience';
+	const { $gsap: gsap, $ScrollTrigger: ScrollTrigger } = useNuxtApp();
 	const experienceStoreStore = useExperienceStore();
+	const sidebarStore = useSidebarStore();
+	const projectsStore = useProjectsStore();
+
+
+	onMounted(() => {
+		// sidebar active
+		ScrollTrigger.create({
+			trigger: '#experience',
+			start: 'top center',
+			end: 'bottom center',
+			onEnter: () => {
+				sidebarStore.setActive('experience');
+				projectsStore.setYear('');
+			},
+			onEnterBack: () => {
+				sidebarStore.setActive('experience');
+				projectsStore.setYear('');
+			},
+		});
+	
+		// snap
+		ScrollTrigger.create({
+			trigger: '#experience',
+			start: 'top top',
+			end: 'bottom center',
+			snap: {
+				snapTo: 0,
+				duration: 0.5,
+				ease: 'power1.inOut',
+			},
+		});
+	});
 
 </script>

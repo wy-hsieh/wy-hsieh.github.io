@@ -19,7 +19,7 @@ h5 {
 }
 
 p, span, a {
-	@apply text-base;
+	@apply text-white;
 }
 
 a {
@@ -27,11 +27,11 @@ a {
 }
 
 h1, h2, h3, h4, h5, p, span, a {
-	@apply text-black dark:text-white ;
+	@apply text-black dark:text-white;
 }
 
 hr {
-	@apply border-muted_gray;
+	@apply dark:border-white border-black;
 }
 
 ::-webkit-scrollbar {

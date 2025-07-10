@@ -1,0 +1,19 @@
+  .loading_overlay_container {
+    @apply absolute top-0 left-0 w-screen h-screen bg-base dark:bg-black z-50;
+
+    .loading_overlay_content {
+      @apply absolute w-1/3 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  
+      #svg_yen {
+        @apply w-full h-full;
+      }
+    
+      #svg_wave {
+        @apply absolute w-full bottom-0 left-0;
+
+        #path_big_wave {
+          @apply invisible;
+        }
+      }
+    }
+  }

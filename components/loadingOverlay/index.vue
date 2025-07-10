@@ -1,0 +1,104 @@
+<template>
+  <ClientOnly>
+    <transition name="fade">
+        <div class="loading_overlay_container" v-if="isLoading">
+          <div class="loading_overlay_content">
+  
+            <svg id="svg_yen" viewBox="200 247 685 272">
+              <path
+                :class="[ isDark ? 'fill-white' : 'fill-black' ]"
+                d="m420.2 340.9c-11.5 8.2-23.6 16-34.7 24.9-5.9 4.8-11.5 3.6-16 0.4-13.4-9.6-22.4-23.8-19.9-39.9 2.8-19 10.4-37.4 16.3-56 1.6-5 4-10 7.1-14.2 7.5-10.1 22.6-7.8 29.1 3 8.9 14.8 1.4 27.3-3.9 40.3-4.3 10.7-9.3 21.2-14 31.7q1.2 1.2 2.4 2.3c11.1-7.6 22.5-14.8 33.1-22.9 20.9-15.9 38.8-34.6 54.1-56 2.7-3.6 8.4-7.1 12.8-7.2 17.4-0.6 21.2 12 15.1 24.8-12.1 25.4-26.1 49.8-39.3 74.6-8.3 15.6-15.8 31.8-24.8 46.9-22.8 38.3-47.9 75.1-83.2 103.2-14.4 11.6-33.8 19.3-51.7 20.9-84.2 3.9-102-43-102-56.2 1.3-7.6 13.1-16 19-15.2 1.8 0.2 4.9 2.4 4.7 3.1-0.6 2.8-1.6 6.1-3.6 7.8-8.4 6.9-8.2 9.7 1.5 16 28.2 18.4 78.1 16.7 106.1-9.1 37.5-34.8 65-76.5 90.7-120 0.6-1 0.8-2.2 1.1-3.2z"
+                />
+              <path 
+                :class="[ isDark ? 'fill-white' : 'fill-black' ]"
+                d="m731.1 293.3c-3.7 2.4-6.7 3.8-9.1 5.9-18.1 15.7-34.5 32.9-48.7 52.3-2.7 3.6-11.2 8.1-12.3 7.1-5.3-4.9-9.9-11.1-13.2-17.6-6.5-12.5 2.7-22.4 6.7-33.1 6.1-16.3 12.7-32.4 19-48.7 1.8-4.7 10.5-7.3 17.4-4.8 6.5 2.2 10.5 10.1 8.2 16.3-0.6 1.7-1.9 3.2-2.2 4.9-0.6 3.2-0.7 6.4-1 10.1 10.4-6.1 20.2-12.1 30.2-17.7 3.4-1.9 7.3-3.6 11.1-4.1 23-2.6 27.4 8.4 24.8 34.2-0.9 8.2-4.3 16.2-7.2 26.9 13.9 1.7 71.1-21.3 94.9-30.3 3.4-1.2 6.8-2.8 9.9-4.8 8.8-5.3 19.8-2.5 24 6.9 2.3 5.1 2.2 9.3-5.3 10.6-6.5 1.1-12.9 3.4-19.1 6-23.8 9.9-47.3 20.4-71.2 30.1-12.2 5-31.9 11.4-43.3 2.2-12.9-10.4-13.5-27.6-13.6-44.6 0-2.1 0-4.2 0-7.8z"
+                />
+              <path
+                :class="[ isDark ? 'fill-white' : 'fill-black' ]"
+                d="m643 318c-4.2 8.5-12.4 9-20.9 10.9-9.6 2.1-19 6.4-27.8 11-15.2 7.9-30.1 16.9-47.5 18.6-8.8 0.8-18.9 0.8-26.5-2.8-15.7-7.4-18.6-25.1-9.5-44.9 12.2-26.6 31-45.9 60.4-52.5 18.5-4.2 32.1 6.8 34.7 24.6 0.5 3-2.5 7.9-5.3 10-21 15-43.2 27.8-69.4 31-9.4 1.2-2.9 8.5-5.8 12 2.4 1.6 5.2 4.9 7 4.4 9.5-2.5 18.8-5.5 27.9-9.1 14-5.6 27.7-11.7 41.6-17.6 1.7-0.7 4.1-1.1 4.9-2.4 5.4-8.9 13.2-5.5 20.7-4.4 7.2 1 14 2.2 15.5 11.2zm-56.1-41.5c-18.1-13.4-45 2.4-51.9 29.1 17.8-9.9 34.1-19.1 51.9-29.1z"
+                />
+            </svg>
+  
+            <svg id="svg_wave" viewBox="0 0 200 100">
+              <path
+                id="path_small_wave"
+                :class="[ isDark ? 'fill-black' : 'fill-base' ]"
+                d="M200,190 L200,100 Q150,90 100,100 T0,100 L0,190 Z"
+                />
+              <path
+                id="path_big_wave"
+                :class="[ isDark ? 'fill-black' : 'fill-base' ]"
+                d="M0,100 L0,10 Q50,-10 100,10 T200,10 L200,100 Z"
+                />
+            </svg>
+  
+          </div>
+        </div>
+      </transition>
+  </ClientOnly>
+</template>
+
+<script setup lang="ts">
+
+  import { useDark } from '@vueuse/core';
+	const { $gsap: gsap, $ScrollTrigger: ScrollTrigger  } = useNuxtApp();
+  const isDark = useDark();
+  const loadingOverlayStore = useLoadingOverlayStore();
+
+
+  const isLoading = computed(() => loadingOverlayStore.data.isLoading);
+
+  onMounted(async() => {
+    await nextTick();
+    const images = Array.from(document.images);
+    const total = images.length || 1;
+    let loaded = 0;
+
+    const morph = gsap.to("#path_small_wave", {
+      morphSVG: "#path_big_wave",
+      paused: true,
+    });
+
+    let targetProgress = 0;
+    let lastProgress = 0;
+    let animationInstance = null;
+
+    const smoothUpdate = () => {
+      if (animationInstance) animationInstance.kill(); // 摧毀 gsap 動畫實例
+
+      animationInstance = gsap.to(morph, {
+        progress: targetProgress,
+        duration: 1.5,
+        ease: "power1.out",
+        onComplete: () => {
+          animationInstance = null;
+
+          // 進度到 100%，關閉 loading overlay
+          if (targetProgress === 1) loadingOverlayStore.closeLoadingOverlay();
+        },
+      });
+    };
+
+    const updateProgress = () => {
+      loaded++;
+      targetProgress = loaded / total;
+
+      // 當進度遞增才更新動畫
+      if (targetProgress > lastProgress) {			
+        lastProgress = targetProgress;
+        smoothUpdate();
+      };
+    };
+
+    setTimeout(() => {
+      images.forEach((img) => {
+        if (img.complete) updateProgress();
+        else {
+          img.addEventListener("load", updateProgress);
+          img.addEventListener("error", updateProgress);
+        };
+      });
+    }, 800);
+  });
+
+</script>

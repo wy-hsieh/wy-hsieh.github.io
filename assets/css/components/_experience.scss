@@ -12,7 +12,13 @@
       }
       
       .experience_title_period {
-        @apply flex gap-2 font-bold;
+        @apply flex gap-2;
+
+        .experience_title {
+          @apply font-bold;
+        }
+
+        .experience_period {}
       }
     }
   }

@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia';
 
 export const useSkillsStore = defineStore('skillsStore', () => {
+  
   const data = ref([
     {
       name: 'HTML',

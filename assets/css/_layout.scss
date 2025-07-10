@@ -1,6 +1,10 @@
 	.layout_container {
 		@apply bg-base dark:bg-black;
 
+		&.is_loading {
+			@apply h-screen overflow-hidden;
+		}
+
 		.layout_wrapper {
 			@apply w-4/5 flex m-auto;
 			
@@ -11,9 +15,5 @@
 			.layout_content {
 				@apply w-2/3 ml-auto;
 			}
-		}
-	
-		.layout_footer {
-			@apply text-center pb-2;
 		}
 	}

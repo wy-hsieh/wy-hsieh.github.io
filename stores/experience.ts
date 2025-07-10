@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia';
 
 export const useExperienceStore = defineStore('experienceStore', () => {
+  
   const data  = ref([
     {
       compony: '安通國際事業股份有限公司',
