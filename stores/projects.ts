@@ -137,7 +137,7 @@ export const useProjectsStore = defineStore('projectsStore', () => {
         },
       ],
     },
-    currentYear: '',
+    currentYear: '', // projects year of the current window
   });
 
   const setYear = (year: string) => data.value.currentYear = year;

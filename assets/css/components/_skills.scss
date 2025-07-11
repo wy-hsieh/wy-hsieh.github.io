@@ -1,9 +1,11 @@
 .skills_container {
-  @apply relative min-h-dvh flex flex-col justify-center z-10;
+  @apply relative flex flex-col justify-center min-h-dvh pb-10 z-10;
+  @apply md:pb-0;
 
   .skills_wrapper {
-    @apply w-full h-full grid grid-cols-4 gap-4;
-
+    @apply flex justify-center flex-wrap w-full h-full gap-2;
+    @apply md:grid md:grid-cols-4 md:gap-4;
+    
     .skills_item {
       @apply relative w-[100px] h-[100px] aspect-square;
     }
@@ -23,7 +25,7 @@
     }
 
     .skills_label {
-      @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center;
+      @apply absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 text-center;
     }
   }
 }

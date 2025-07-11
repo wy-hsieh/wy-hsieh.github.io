@@ -37,16 +37,16 @@
 			start: 'top center',
 			end: 'bottom center',
 			onEnter: () => {
-				sidebarStore.setActive('skills');
+				sidebarStore.setCurrentAnchor('skills');
 				projectsStore.setYear('');
 			},
 			onEnterBack: () => {
-				sidebarStore.setActive('skills');
+				sidebarStore.setCurrentAnchor('skills');
 				projectsStore.setYear('');
 			},
 		});
 
-			// skills progress
+		// skills progress
 		skillsStore.data.forEach((item) => {
       ScrollTrigger.create({
         trigger: '#skills',

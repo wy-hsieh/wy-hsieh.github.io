@@ -1,6 +1,9 @@
 // 滾動至指定錨點
 
 const { $gsap: gsap } = useNuxtApp();
+const sidebarStore = useSidebarStore();
+
+const isMobile = computed(() => sidebarStore.data.isMobile);
 
 export const useScrollToAnchor = (id: string) => {
   switch (id) {
@@ -8,6 +11,7 @@ export const useScrollToAnchor = (id: string) => {
       gsap.to(window, {
         duration: 1,
         scrollTo: '#about',
+        onComplete: () => { if (isMobile.value) sidebarStore.closeMobileSidebar() },
       });
       break;
 
@@ -15,6 +19,7 @@ export const useScrollToAnchor = (id: string) => {
       gsap.to(window, {
         duration: 1,
         scrollTo: '#experience',
+        onComplete: () => { if (isMobile.value) sidebarStore.closeMobileSidebar() },
       });
       break;
 
@@ -22,6 +27,7 @@ export const useScrollToAnchor = (id: string) => {
       gsap.to(window, {
         duration: 1,
         scrollTo: '#projects',
+        onComplete: () => { if (isMobile.value) sidebarStore.closeMobileSidebar() },
       });
       break;
 
@@ -29,6 +35,7 @@ export const useScrollToAnchor = (id: string) => {
       gsap.to(window, {
         duration: 1,
         scrollTo: '#skills',
+        onComplete: () => { if (isMobile.value) sidebarStore.closeMobileSidebar() },
       });
       break;
   };

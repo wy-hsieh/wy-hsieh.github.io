@@ -1,10 +1,7 @@
 <template>
 	<div id="projects" class="projects_container">
-		<transition name="fade">
-			<p
-				class="projects_bg_year"
-				v-if="currentYear"
-				>
+		<transition name="fade_800">
+			<p class="projects_bg_year" v-if="currentYear">
 				{{ currentYear }}
 			</p>
 		</transition>
@@ -69,8 +66,8 @@
 			trigger: '#projects',
 			start: 'top center',
 			end: 'bottom center',
-			onEnter: () => sidebarStore.setActive('projects'),
-			onEnterBack: () => sidebarStore.setActive('projects'),
+			onEnter: () => sidebarStore.setCurrentAnchor('projects'),
+			onEnterBack: () => sidebarStore.setCurrentAnchor('projects'),
 		});
 
 		// background animation

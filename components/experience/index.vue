@@ -40,11 +40,11 @@
 			start: 'top center',
 			end: 'bottom center',
 			onEnter: () => {
-				sidebarStore.setActive('experience');
+				sidebarStore.setCurrentAnchor('experience');
 				projectsStore.setYear('');
 			},
 			onEnterBack: () => {
-				sidebarStore.setActive('experience');
+				sidebarStore.setCurrentAnchor('experience');
 				projectsStore.setYear('');
 			},
 		});

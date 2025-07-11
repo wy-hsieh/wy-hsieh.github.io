@@ -1,19 +1,32 @@
 	.layout_container {
-		@apply bg-base dark:bg-black;
+		@apply bg-base;
+		@apply dark:bg-black;
 
 		&.is_loading {
 			@apply h-screen overflow-hidden;
 		}
 
 		.layout_wrapper {
-			@apply w-4/5 flex m-auto;
+			@apply flex w-4/5 m-auto;
+
+			.layout_toggle { // css transition & vue transition tag conflict, put transition in dynamic calss
+				@apply fixed top-6 left-6 w-[80px] h-[80px] rounded-full bg-base/10 backdrop-blur-md shadow-md z-40 hover:translate-y-1 active:shadow-none;
+				@apply md:hidden;
+
+				.layout_toggle_img {
+					@apply w-[64px] m-auto;
+				}
+			}
 			
 			.layout_sidebar {
-				@apply fixed flex flex-col gap-20 top-1/2 -translate-y-1/2 z-10;
+				@apply fixed flex flex-col justify-center top-0 left-0 py-10 px-4 max-w-[50%] h-full gap-20 bg-white shadow-md z-40;
+				@apply dark:bg-watermark_dark;
+				@apply md:left-auto md:p-0 md:max-w-none md:bg-transparent md:shadow-none;
 			}
 		
 			.layout_content {
-				@apply w-2/3 ml-auto;
+				@apply ml-auto w-full;
+				@apply md:pl-10 md:w-2/3;
 			}
 		}
 	}

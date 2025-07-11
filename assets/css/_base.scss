@@ -27,11 +27,16 @@ a {
 }
 
 h1, h2, h3, h4, h5, p, span, a {
-	@apply text-black dark:text-white;
+	@apply text-black;
+	@apply dark:text-white;
 }
 
 hr {
 	@apply dark:border-white border-black;
+}
+
+img {
+	@apply w-full;
 }
 
 ::-webkit-scrollbar {
@@ -39,13 +44,42 @@ hr {
 }
 
 
-/* transition animate */
-.fade-enter-active,
-.fade-leave-active {
-	@apply transition-all duration-[800ms];
+// transition animate
+// fade 800ms
+.fade_800-enter-active,
+.fade_800-leave-active {
+	@apply transition-opacity duration-[800ms];
 }
 
-.fade-enter-from,
-.fade-leave-to  {
+.fade_800-enter-from,
+.fade_800-leave-to  {
 	@apply opacity-0;
+}
+
+
+// fade 300ms
+.fade_300-enter-active {
+	@apply delay-[900ms];
+}
+
+.fade_300-enter-active,
+.fade_300-leave-active{
+	@apply transition-opacity duration-[300ms];
+}
+
+.fade_300-enter-from,
+.fade_300-leave-to  {
+	@apply opacity-0;
+}
+
+
+// slide right 1000ms
+.slide_right_1000-enter-active,
+.slide_right_1000-leave-active {
+	@apply transition-transform duration-[1000ms];
+}
+
+.slide_right_1000-enter-from,
+.slide_right_1000-leave-to  {
+	@apply -translate-x-full;
 }

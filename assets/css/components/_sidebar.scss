@@ -1,27 +1,32 @@
 .sidebar_logo {
-  @apply w-[120px];
-
-  &>img {
-    @apply w-full;
-  }
+  @apply w-[90px] mx-auto;
+  @apply md:w-[120px] md:mx-0;
 }
 
 .sidebar_container {
-  @apply flex flex-col gap-40;
+  @apply flex flex-col gap-40 z-10;
 
   .sidebar_menu {
     .sidebar_line {
-      @apply relative pl-[30px] transition-all duration-500 ease-in-out before:absolute before:w-[20px] before:h-[6px] before:bg-black before:dark:bg-[#E0E0E0] before:rounded-full before:left-0 before:top-1/2 before:-translate-y-1/2 before:transition-all before:duration-500 before:ease-in-out;
-    
+      @apply relative pl-[30px] transition-all duration-500 ease-in-out;
+      @apply before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-[20px] before:h-1 before:bg-muted_gray before:rounded-full before:transition-all before:duration-500 before:ease-in-out;
+      @apply md:before:h-[6px];
+
       &>span {
-        @apply text-[20px] text-muted_gray leading-10 cursor-pointer;
+        @apply text-muted_gray leading-10 cursor-pointer transition-all duration-500 ease-in-out;
+        @apply md:text-[20px];
       }
   
       &.active {
-        @apply pl-[80px] before:bg-black before:dark:bg-pure_white before:w-[60px];
+        @apply md:pl-[80px];
+        @apply before:bg-black ;
+        @apply before:dark:bg-pure_white;
+        @apply md:before:w-[60px];
       
         &>span {
-          @apply text-[28px] text-black dark:text-pure_white;
+          @apply text-[24px] text-black;
+          @apply dark:text-pure_white;
+          @apply md:text-[28px];
         }
       }
     }
@@ -34,10 +39,11 @@
       @apply flex gap-5;
       
       &>a {
-        @apply w-7;
+        @apply w-5;
+        @apply md:w-7;
         
         &>img {
-          @apply w-full hover:scale-125 transition;
+          @apply hover:scale-125 transition;
         }
       }
     }

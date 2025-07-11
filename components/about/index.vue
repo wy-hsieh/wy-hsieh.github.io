@@ -18,12 +18,12 @@
 			trigger: '#about',
 			start: 'top center',
 			end: 'bottom center',
-			onEnter: (self) => {
-				sidebarStore.setActive('about');
+			onEnter: () => {
+				sidebarStore.setCurrentAnchor('about');
 				projectsStore.setYear('');
 			},
 			onEnterBack: () => {
-				sidebarStore.setActive('about');
+				sidebarStore.setCurrentAnchor('about');
 				projectsStore.setYear('');
 			},
 		});

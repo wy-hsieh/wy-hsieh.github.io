@@ -1,30 +1,30 @@
 .projects_container {
-  @apply flex h-auto flex-col gap-20;
+  @apply flex flex-col h-auto pb-10 gap-20 z-10;
+  @apply md:pb-0;
   
   .projects_bg_year {
-    @apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[40vw] font-bold tabular-nums text-watermark dark:text-[#2A2A2A] select-none z-0;
+    @apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[40vw] font-bold text-watermark_light tabular-nums select-none z-0;
+    @apply dark:text-watermark_dark;
   }
   
   .projects_year_group {
-    @apply min-h-dvh flex flex-col gap-6 justify-center;
+    @apply flex flex-col justify-center min-h-dvh gap-6;
 
     .projects_item {
-      @apply flex gap-6 z-10;
+      @apply flex flex-col gap-6 z-10;
+      @apply md:flex-row;
 
       .projects_img {
-        @apply relative max-w-[160px] h-[160px] overflow-hidden rounded-lg;
-      
-        &>img {
-          @apply w-full;
-        }
+        @apply relative min-w-[160px] max-w-[160px] h-[160px] rounded-lg overflow-hidden;
   
         &>.mask {
-          @apply absolute inset-0  transition duration-300 bg-black/20 dark:bg-black/60;
+          @apply absolute inset-0 transition-colors duration-300 bg-black/20;
+          @apply dark:bg-black/60;
         }
       }
 
       &:hover .mask {
-        @apply  bg-black/0;
+        @apply bg-black/0;
       }
     }
 
@@ -35,11 +35,13 @@
         @apply flex flex-col gap-4;
 
         .projects_skills {
-          @apply flex gap-4;
+          @apply flex flex-wrap gap-2;
+          @apply md:gap-4;
         }
         
         .projects_skills_tag {
-          @apply border border-black dark:border-white rounded-full px-2 cursor-default transition hover:bg-black hover:text-white  hover:dark:bg-white hover:dark:text-black;
+          @apply px-2 border border-black rounded-full transition-colors cursor-default hover:text-white hover:bg-black;
+          @apply dark:border-white hover:dark:bg-white hover:dark:text-black;
         }
       }
     }
