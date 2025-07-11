@@ -4,7 +4,7 @@
 }
 
 .sidebar_container {
-  @apply flex flex-col gap-40 z-10;
+  @apply flex flex-col z-10;
 
   .sidebar_menu {
     .sidebar_line {
@@ -31,25 +31,25 @@
       }
     }
   }
+}
 
-  .sidebar_footer {
-    @apply flex flex-col gap-2;
+.sidebar_footer {
+  @apply flex flex-col gap-2;
 
-    .sidebar_icons {
-      @apply flex gap-5;
+  .sidebar_icons {
+    @apply flex gap-5;
+    
+    &>a {
+      @apply w-5;
+      @apply md:w-7;
       
-      &>a {
-        @apply w-5;
-        @apply md:w-7;
-        
-        &>img {
-          @apply hover:scale-125 transition;
-        }
+      &>img {
+        @apply hover:scale-125 transition;
       }
     }
+  }
 
-    .sidebar_copyright {
-      @apply text-[12px];
-    }
+  .sidebar_copyright {
+    @apply text-[12px];
   }
 }

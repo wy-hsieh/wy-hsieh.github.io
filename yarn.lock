@@ -4020,6 +4020,16 @@ nth-check@^2.0.1:
   dependencies:
     boolbase "^1.0.0"
 
+nuxt-gtag@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/nuxt-gtag/-/nuxt-gtag-3.0.3.tgz#e1990fba419bbb2f79398a17e4d9b19e9db103b7"
+  integrity sha512-1XZc9I3DiF2GC07P7uQOlGN4v1cbnLwWHaQUIlayp4pg0h7wOrna5Nl733/2rXq7ktPL3fT8NBJR7OsV9BtJRA==
+  dependencies:
+    "@nuxt/kit" "^3.17.5"
+    defu "^6.1.4"
+    pathe "^2.0.3"
+    ufo "^1.6.1"
+
 nuxt-lodash@^2.5.3:
   version "2.5.3"
   resolved "https://registry.yarnpkg.com/nuxt-lodash/-/nuxt-lodash-2.5.3.tgz#7ae8ba5762df3ae3e7a061d86eac923b7c5173e1"

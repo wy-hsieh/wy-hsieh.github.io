@@ -48,18 +48,6 @@
 				projectsStore.setYear('');
 			},
 		});
-	
-		// snap
-		ScrollTrigger.create({
-			trigger: '#experience',
-			start: 'top top',
-			end: 'bottom center',
-			snap: {
-				snapTo: 0,
-				duration: 0.5,
-				ease: 'power1.inOut',
-			},
-		});
 	});
 
 </script>

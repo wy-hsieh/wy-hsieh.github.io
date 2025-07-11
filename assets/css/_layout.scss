@@ -19,9 +19,9 @@
 			}
 			
 			.layout_sidebar {
-				@apply fixed flex flex-col justify-center top-0 left-0 py-10 px-4 max-w-[50%] h-full gap-20 bg-white shadow-md z-40;
+				@apply fixed flex flex-col justify-between top-0 left-0 py-10 px-4 max-w-[50%] h-full bg-white shadow-md z-40;
 				@apply dark:bg-watermark_dark;
-				@apply md:left-auto md:p-0 md:max-w-none md:bg-transparent md:shadow-none;
+				@apply md:justify-center md:left-auto md:p-0 md:max-w-none md:gap-40 md:bg-transparent md:shadow-none;
 			}
 		
 			.layout_content {

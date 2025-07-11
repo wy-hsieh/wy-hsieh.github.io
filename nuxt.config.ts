@@ -6,10 +6,14 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@vueuse/nuxt',
     'nuxt-lodash',
+    'nuxt-gtag',
   ],
   plugins: [
     { src: '~/plugins/gsap.ts', mode: 'client' },
   ],
+  gtag: {
+    id: 'G-Q8RPPF090N',
+  },
   app: {
     baseURL: '/',
     buildAssetsDir: '/static/',

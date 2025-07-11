@@ -20,18 +20,19 @@
 			</div>
 		</div>
 
-		<div class="sidebar_footer ">
-			<div class="sidebar_icons">
-				<a :href="sidebarStore.data.githubUrl" target="_blank">
-					<img src="@/assets/images/icons/icon_github.png" alt="github">
-				</a>
-				<a :href="sidebarStore.data.linkedInUrl" target="_blank">
-					<img src="@/assets/images/icons/icon_linkedin.png" alt="linkedIn">
-				</a>
-			</div>
-
-			<p class="sidebar_copyright">© 2025 Yen. Portfolio Website.</p>
+	</div>
+	
+	<div class="sidebar_footer">
+		<div class="sidebar_icons">
+			<a :href="sidebarStore.data.githubUrl" target="_blank">
+				<img src="@/assets/images/icons/icon_github.png" alt="github">
+			</a>
+			<a :href="sidebarStore.data.linkedInUrl" target="_blank">
+				<img src="@/assets/images/icons/icon_linkedin.png" alt="linkedIn">
+			</a>
 		</div>
+
+		<p class="sidebar_copyright">© 2025 Yen. Portfolio Website.</p>
 	</div>
 </template>
 
