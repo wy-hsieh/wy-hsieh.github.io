@@ -1,11 +1,18 @@
 # Changelog
 
+## [1.0.2] - 2025-07-14
+### Changed
+- 調整經歷內容
+
+
 ## [1.0.1] - 2025-07-12
 ### Added
-- 安裝 gtag，新增 GA
+- 安裝 gtag
+- 新增 GA
+
 
 ### Changed
-- 調整 about 內容
+- 調整關於內容
 - 調整 sidebar
 
 ### Removed
